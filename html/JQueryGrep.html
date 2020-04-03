@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>Learning Jquery Grep</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        <!-- Grep function to filter array elements based on condition -->
+        $(function(){
+            var numbers = [2,3,4,5,6,7,8,9,10,11,12,13,14,16];
+            var evenArray = getEvenNumbers(numbers);
+            var oddArray = getOddNumbers(numbers);
+            console.log('Numbers : ' + numbers);
+            console.log('Even Numbers : ' + evenArray);
+            console.log('Odd Numbers : ' + oddArray);
+
+        });
+        function getEvenNumbers(numArray) {
+            var resultArray = $.grep(numArray, function(number, index){
+                return number % 2 == 0;
+            });
+            return resultArray;
+        }
+        function getOddNumbers(numArray) {
+           var resultArray = $.grep(numArray, function(number, index){
+               return number % 2 == 0;
+           }, true);
+           return resultArray;
+        }
+    </script>
+</head>    
+<body>
+
+</body>
+</html>
