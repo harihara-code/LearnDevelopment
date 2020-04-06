@@ -29,7 +29,8 @@ class JavaStreamApi {
 
 		List<String> newList = list.stream().sorted().filter(x -> x.startsWith("r")).collect(Collectors.toList());
 		System.out.println("After pipelined stream operations -" + newList);
-		System.out.println("Original list not affected by stream operations");
-		System.out.println("Original list elements " + list);
+
+
+
 	}
 }

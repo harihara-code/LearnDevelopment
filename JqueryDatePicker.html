@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title>Datepicker</title>
+	<script src="./lib/jquery.js"></script>
+	<script src="./lib/jqueryui.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"/>
+<script>
+	$(function(){
+		$('#date').datepicker({
+			showAnim : "drop",
+			changeYear : true,
+			changeMonth : true,
+			duration : "fast",
+			yearRange : "1900:2020",
+			maxDate : "+2m",
+			firstDay : 1,
+			dateFormat : "dd/mm/yy"
+		});
+
+		$("#date").datepicker("option", "onSelect", function(selectedDateValue,datePickerObject){
+			$('body').append('<p>Selected Date from calendar : ' + selectedDateValue +'</p>');
+		});
+	});
+</script>
+</head>
+
+<body>
+	<input type="text" id="date"/>
+	
+</body>
+</html>

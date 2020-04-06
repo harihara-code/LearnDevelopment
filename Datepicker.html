@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>Datepicker</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="./lib/jqueryui.js"></script>
+	
+<script src="./datetimepicker-master/build/jquery.datetimepicker.full.min.js"></script>	
+<link rel="stylesheet" type="text/css" href="./datetimepicker-master/jquery.datetimepicker.css"/ >
+
+<script>
+	$(function(){	
+		// $('#target').datepicker({showAnim:"drop",
+		// 	showButtonPanel : true,
+		// 	changeYear : true,
+		// 	changeMonth : true,
+		// 	changeDay : true,
+		// 	defaultDate : "+2m",
+		// 	duration : "fast",
+		// 	maxDate : 2,
+		// 	minDate : 1
+		// 	// numberOfMonths: 3,
+		// 	//  showOptions: { direction: "right" }
+		// });
+
+		// $('#but1').on('click', function() {
+		// 		// $('#target').datepicker("destroy");
+		// 		$('#target').datepicker("dialog", "26/09/1995");
+
+		// });
+
+
+		// console.log(new Date("2020-09-26"));
+		// var d = new Date("Mar 21, 2020");
+		// var msec = Date.parse(d);
+		// console.log(new Date(msec));
+		$('#target').datetimepicker({theme : 'dark',timepicker : false});
+	});
+</script>
+</head>
+<body>
+	<input type="text" id="target"/>
+	<input type="button" id="but1" value="destroy datepicker ability"/>
+</body>
+</html>
