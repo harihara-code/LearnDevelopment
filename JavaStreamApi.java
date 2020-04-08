@@ -17,11 +17,11 @@ class JavaStreamApi {
 		/*filtering list elements using stream operations*/
 		List<String> list = new ArrayList<String>();
 
-		list.add("hariharan");
 		list.add("rohit");
 		list.add("yamuna");
 		list.add("suzuka");
 		list.add("daniel");
+		list.add("hariharan");
 		list.add("rakesh");
 		list.add("prabhu");
 
