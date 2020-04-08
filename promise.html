@@ -1,0 +1,44 @@
+<html>
+<head>
+<script type="text/javascript" src=".\lib\jquery.js">
+</script>
+<script>
+	$(function(){
+		var buttonClicked = false;
+
+		$('#clickmebutton').click(function() {
+			console.log('buttonClicked variable updated');
+			buttonClicked = true;
+		});
+
+		var userClickedWithin5Sec = function() {
+			return new Promise(function(resolve, reject) {
+				if(buttonClicked) {
+					resolve('Promise resolved Thanks for clicked the button');
+				} else {
+					reject('Promise rejected !!');
+				}
+			});
+		}
+
+		setTimeout(function() {
+						userClickedWithin5Sec().then(function(msg){
+													alert(msg);
+												  }, function(msg){
+												  	alert(msg);}
+												  );
+		}, 5000);
+
+	});
+
+	
+
+</script>
+</head>
+<body>
+	To resolve promise click the below button within 5 sec otherwise promise will reject
+ 	<input type="button" value="click" id="clickmebutton"/>
+
+</body>
+
+</html>

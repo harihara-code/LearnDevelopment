@@ -1,0 +1,43 @@
+<html>
+<head>
+<script type="text/javascript" src=".\lib\jquery.js">
+</script>
+<script>
+	$(function(){
+		$('input[type="button"]').on('click', function(){
+			console.log('button clicked');
+		});
+
+		$('select').on('change',function(){
+			var district = $(this).find(':selected').text();
+			console.log('selected district :' + district);
+		});
+
+		$('textarea').on('keypress', function(key){
+			// console.log(key.key);
+			var c = $(this).val();
+			$('#contentarea').html(c);
+		})
+
+
+	});
+</script>
+</head>
+<body>
+	<input type="button" value="click"/> <br/>	
+	District : <select>
+		<option>Select District</option>
+		<option>Chennai</option>
+		<option>Madurai</option>
+		<option>Kanyakumari</option>
+		<option>Thirunelveli</option>
+	</select>
+	<br/>
+	<br/>
+	<div id="contentarea"></div>
+	Enter content to display above <br/>
+	<textarea> </textarea>
+
+</body>
+
+</html>

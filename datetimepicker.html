@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title>Datepicker</title>
+	<script src="./lib/jquery.js"></script>
+	<script src="./lib/jqueryui.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"/>
+	<script src="./datetimepicker-master/build/jquery.datetimepicker.full.min.js"></script>	
+	<link rel="stylesheet" type="text/css" href="./datetimepicker-master/jquery.datetimepicker.css"/ >
+<script>
+	$(function(){
+		$('#date').datetimepicker({theme : "dark"});		
+		$('#time').datetimepicker({datepicker: false,
+			format: 'H:i',
+			theme: "dark" 	
+		});
+		$('#dateonly').datetimepicker({
+			theme: "dark",
+			timepicker : false,
+			format : 'd/m/yy'
+		});		
+	});
+
+</script>
+</head>
+
+<body>
+	Date and time picker : <input type="text" id="date"/> <br/>
+	Time picker :<input type="text" id="time"/> <br/>
+	Date picker : <input type="text" id="dateonly"/>
+</body>
+</html>

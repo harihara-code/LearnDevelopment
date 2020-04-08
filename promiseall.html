@@ -1,0 +1,43 @@
+<html>
+<head>
+<script type="text/javascript" src=".\lib\jquery.js">
+</script>
+<script>
+	var promiseState = [true,true,false];
+	var promise1 = new Promise(function(resolve, reject) {
+			if(promiseState[0]) {
+				resolve("promise 1 resolved");
+			} else {
+				reject("promise 1 rejected");
+			}
+	});
+	
+	var promise2 = new Promise(function(resolve, reject) {
+			if(promiseState[1]) {
+				resolve("promise 2 resolved");
+			} else {
+				reject("promise 2 rejected");
+			}
+	});
+	var promise3 = new Promise(function(resolve, reject) {
+			if(promiseState[2]) {
+				resolve("promise 3 resolved");
+			} else {
+				reject("promise 3 rejected");
+			}
+	});
+
+	Promise.all([promise1, promise2,promise3]).then(function(results) {
+		console.log('All promises resolved and their values : ' + results);
+	}, function(err) {
+		console.log(err);
+	});
+
+
+</script>
+</head>
+<body>
+	
+</body>
+
+</html>

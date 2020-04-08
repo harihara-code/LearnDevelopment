@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title>Js promises</title>
+	<script>
+	// // showSpinner();
+	// 	const promise = new Promise(function(resolve, reeject) {
+	// 		setTimeout(function(){
+	// 			const chaos = Math.random();
+	// 			if(true) {
+	// 				reeject("Promise rejected");
+	// 			} else {
+	// 				resolve("Promise resolved");
+	// 			}
+	// 		}, 2000);
+	// 	});
+
+	// 	promise.then(function(msg) {console.log(msg);}, function(errmsg){console.log(errmsg)});
+	var isPossibleToPurchaseGift = true;
+
+	var willGetNewGift = new Promise(function(resolve, reject){
+		if(isPossibleToPurchaseGift) {
+			var gift = {
+				ring : true,
+				flowers : true
+			};
+			resolve(gift);
+		} else {
+			var error = new Error('Left my wallet!!');
+			reject(error);
+		}
+
+	});
+
+	willGetNewGift.then(function(gift) {
+		console.log(gift);
+	}).catch(function(error) {
+		console.log(error.message);
+	});
+		
+	</script>
+</head>
+</html>

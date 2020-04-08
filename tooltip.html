@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>Jquery tool tip</title>
+<script src="./lib/jquery.js"></script>
+<script src="./lib/jqueryui.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"/>
+<script>
+$(function(){
+	$('#testtooltip').tooltip();
+	$('#button1').click(function(){
+		var content = $('#testtooltip').val();
+		$('#testtooltip').tooltip("option","content", content);
+	});
+});
+</script>
+</head>
+<body>
+<input type="text" id="testtooltip" title="This is the tool tip"/> 
+<input type="button" id="button1" value="change	"/>
+</body>
+</html>

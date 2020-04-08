@@ -1,0 +1,32 @@
+<html>
+<head>
+<script type="text/javascript" src=".\lib\jquery.js">
+</script>
+<script>
+	var promiseState = [true,true,false];
+	var promise1 = new Promise(function(resolve, reject) {
+			var value = promiseState[0] ? "promise 1 resolved" : "promise 1 rejected";
+			setTimeout(resolve, 10000, value);
+	});
+	
+	var promise2 = new Promise(function(resolve, reject) {
+			var value = promiseState[1] ? "promise 2 resolved" : "promise 2 rejected";
+			setTimeout(resolve, 5000, value);
+	});
+	var promise3 = new Promise(function(resolve, reject) {
+			var value = promiseState[2] ? "promise 3 resolved" : "promise 3 rejected";
+			setTimeout(reject, 3000, value);
+	});
+
+	Promise.race([promise1, promise2, promise3]).then(function(value){console.log(value)}, function(err){
+		console.log(err);
+	});
+
+
+</script>
+</head>
+<body>
+	
+</body>
+
+</html>
